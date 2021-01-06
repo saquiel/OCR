@@ -1,0 +1,11 @@
+name,surname,age,AGATC,AATG,TATC
+Alice,Jall,22,2,8,3
+Charlie,Monta,48,3,2,5
+Bob,Doo,78,4,1,5
+Duplicate,twin,17,3,2,5
+Null,MrNull,,3,4,3
+DoubleNull,MrNullDouble,," 3",4,
+Duplicate,twin,17,3,2,5
+TypeValue,12,25,2,1,one
+OutLierHigh,High,39,50,2,4
+OutlierLow,Low,66,2,-50,3

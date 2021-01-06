@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 3: Etude de santé publique</title>
+
+    <style>
+        /* Element selectors */
+        body {
+          background-color: rgb(228, 236, 234);
+        }
+        /* select only one h2 */
+        /* . is for classes */
+        .primary_heading {
+          color: rgb(0, 45, 128);
+        }
+  
+        /* # is for IDs */
+        #code {
+          background-color: #050000;
+          color:rgb(196, 207, 226)
+        }
+        #comment {
+          color: rgb(5, 73, 3);
+        }
+
+        </style>
+</head>
+
+
+
+
+
+<body>
+  <div id=comment>
+    <p> importation des  <br>
+    Unde ratione praesentium consectetur ipsa molestiae? 
+    Consectetur voluptatibus quia ullam sapiente, debitis praesentium aliquid modi consequuntur doloremque odio cum magnam saepe quasi?
+  </p>
+    </div>
+    <div id=code>
+      df_population = pd.read_csv("python/oc_data_analyst/project3/data/fr_population.csv", usecols=["Zone", "Valeur"])<br>
+      df_sous_alim = pd.read_csv("python/oc_data_analyst/project3/data/fr_sousalimentation.csv", usecols=["Zone", "Année", "Valeur"])<br>
+      df_animaux = pd.read_csv("python/oc_data_analyst/project3/data/fr_animaux.csv", usecols=["Zone", "Élément", "Produit", "Valeur"])<br>
+      df_cereales = pd.read_csv("python/oc_data_analyst/project3/data/fr_céréales.csv", usecols=["Produit"])<br>
+      df_vegetaux = pd.read_csv("python/oc_data_analyst/project3/data/fr_vegetaux.csv", usecols=["Zone", "Élément", "Produit", "Valeur"])<br>
+      
+    </div>
+</body>
+</html>
