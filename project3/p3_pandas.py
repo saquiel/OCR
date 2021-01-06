@@ -30,6 +30,8 @@ df_sous_alim = CsvToPandas("python/oc_data_analyst/project3/data/fr_sousalimenta
 df_animaux = CsvToPandas("python/oc_data_analyst/project3/data/fr_animaux.csv", ["Zone", "Élément", "Produit", "Valeur"])
 df_cereales = CsvToPandas("python/oc_data_analyst/project3/data/fr_céréales.csv", ["Produit"])
 df_vegetaux = CsvToPandas("python/oc_data_analyst/project3/data/fr_vegetaux.csv", ["Zone", "Élément", "Produit", "Valeur"])
+df_list_vegetaux = CsvToPandas("python/oc_data_analyst/project3/data/fr_vegetaux.csv", ["Produit"])
+
 # le parse des fichiers est réalisé en tête de script afin de facilité, si nécessaire, 
 # une optimisation (via concurency: lib threading)
 
@@ -98,7 +100,6 @@ df_sous_alim["Valeur"] =  pd.to_numeric(df_sous_alim["Valeur"], errors='coerce')
 df_sous_alim["Valeur"]=df_sous_alim["Valeur"].apply(lambda x: x*1000000).astype(int)
 
 # création list des vegetaux
-df_list_vegetaux = pd.read_csv("python/oc_data_analyst/project3/data/fr_vegetaux.csv", usecols=["Produit"])
 df_list_vegetaux = df_list_vegetaux.drop_duplicates()
 
 # TODO question 1 Calculez le nombre total d’humains sur la planète

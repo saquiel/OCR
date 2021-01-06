@@ -14279,10 +14279,22 @@ a.anchor-link {
 <p>Afin de permettre au scipt de fonctionner sur un autre terminal ,il est nécessaire de modifier les chemin de lecture des fichiers csv.</p>
 
 </div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Dossier avec l'ensemble du projet. Les fichiers python sont fonctionnels sous linux.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://github.com/saquiel/OCR.git">https://github.com/saquiel/OCR.git</a></p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -14305,29 +14317,44 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Convertir les fichiers csv =&gt; DataFrame pandas.
 Selectionne les colonnes nécessaires</p>
-<p>def CsvToPandas (path_to_csv, input_col):
-    ''' load csv to a pandas data frame:
-        input:  path to csv file
-                column to extract
-        output: pandas data frame'''
-    try:
-        output_df = pd.read_csv(path_to_csv, usecols=input_col)
-    except FileNotFoundError:
-        return print("file not found, input the path to the csv file")
-    return output_df</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_population</span> <span class="o">=</span> <span class="n">CsvToPandas</span><span class="p">(</span><span class="s2">&quot;python/oc_data_analyst/project3/data/fr_population.csv&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Zone&quot;</span><span class="p">,</span> <span class="s2">&quot;Valeur&quot;</span><span class="p">])</span>
-<span class="n">df_sous_alim</span> <span class="o">=</span> <span class="n">CsvToPandas</span><span class="p">(</span><span class="s2">&quot;python/oc_data_analyst/project3/data/fr_sousalimentation.csv&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Zone&quot;</span><span class="p">,</span> <span class="s2">&quot;Année&quot;</span><span class="p">,</span> <span class="s2">&quot;Valeur&quot;</span><span class="p">])</span>
-<span class="n">df_animaux</span> <span class="o">=</span> <span class="n">CsvToPandas</span><span class="p">(</span><span class="s2">&quot;python/oc_data_analyst/project3/data/fr_animaux.csv&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Zone&quot;</span><span class="p">,</span> <span class="s2">&quot;Élément&quot;</span><span class="p">,</span> <span class="s2">&quot;Produit&quot;</span><span class="p">,</span> <span class="s2">&quot;Valeur&quot;</span><span class="p">])</span>
-<span class="n">df_cereales</span> <span class="o">=</span> <span class="n">CsvToPandas</span><span class="p">(</span><span class="s2">&quot;python/oc_data_analyst/project3/data/fr_céréales.csv&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Produit&quot;</span><span class="p">])</span>
-<span class="n">df_vegetaux</span> <span class="o">=</span> <span class="n">CsvToPandas</span><span class="p">(</span><span class="s2">&quot;python/oc_data_analyst/project3/data/fr_vegetaux.csv&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Zone&quot;</span><span class="p">,</span> <span class="s2">&quot;Élément&quot;</span><span class="p">,</span> <span class="s2">&quot;Produit&quot;</span><span class="p">,</span> <span class="s2">&quot;Valeur&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">CsvToPandas</span> <span class="p">(</span><span class="n">path_to_csv</span><span class="p">,</span> <span class="n">input_col</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; load csv to a pandas data frame:</span>
+<span class="sd">        input:  path to csv file</span>
+<span class="sd">                column to extract</span>
+<span class="sd">        output: pandas data frame&#39;&#39;&#39;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">output_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_to_csv</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="n">input_col</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;file not found, input the path to the csv file&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">output_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_population</span> <span class="o">=</span> <span class="n">CsvToPandas</span><span class="p">(</span><span class="s2">&quot;./data/fr_population.csv&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Zone&quot;</span><span class="p">,</span> <span class="s2">&quot;Valeur&quot;</span><span class="p">])</span>
+<span class="n">df_sous_alim</span> <span class="o">=</span> <span class="n">CsvToPandas</span><span class="p">(</span><span class="s2">&quot;./data/fr_sousalimentation.csv&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Zone&quot;</span><span class="p">,</span> <span class="s2">&quot;Année&quot;</span><span class="p">,</span> <span class="s2">&quot;Valeur&quot;</span><span class="p">])</span>
+<span class="n">df_animaux</span> <span class="o">=</span> <span class="n">CsvToPandas</span><span class="p">(</span><span class="s2">&quot;./data/fr_animaux.csv&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Zone&quot;</span><span class="p">,</span> <span class="s2">&quot;Élément&quot;</span><span class="p">,</span> <span class="s2">&quot;Produit&quot;</span><span class="p">,</span> <span class="s2">&quot;Valeur&quot;</span><span class="p">])</span>
+<span class="n">df_cereales</span> <span class="o">=</span> <span class="n">CsvToPandas</span><span class="p">(</span><span class="s2">&quot;./data/fr_céréales.csv&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Produit&quot;</span><span class="p">])</span>
+<span class="n">df_vegetaux</span> <span class="o">=</span> <span class="n">CsvToPandas</span><span class="p">(</span><span class="s2">&quot;./data/fr_vegetaux.csv&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Zone&quot;</span><span class="p">,</span> <span class="s2">&quot;Élément&quot;</span><span class="p">,</span> <span class="s2">&quot;Produit&quot;</span><span class="p">,</span> <span class="s2">&quot;Valeur&quot;</span><span class="p">])</span>
+<span class="n">df_list_vegetaux</span> <span class="o">=</span> <span class="n">CsvToPandas</span><span class="p">(</span><span class="s2">&quot;./data/fr_vegetaux.csv&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Produit&quot;</span><span class="p">])</span>
+
 <span class="c1"># le parse des fichiers est réalisé en tête de script afin de facilité, si nécessaire, </span>
 <span class="c1"># une optimisation (via concurency: lib threading)</span>
 </pre></div>
@@ -14345,7 +14372,7 @@ Selectionne les colonnes nécessaires</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preparation dataframe disponibilité: df_dispo</span>
@@ -14378,7 +14405,7 @@ Selectionne les colonnes nécessaires</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># DF dispo</span>
@@ -14426,7 +14453,7 @@ Selectionne les colonnes nécessaires</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># DF population sous nutrition</span>
@@ -14448,7 +14475,7 @@ Selectionne les colonnes nécessaires</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Nettoyage list des vegetaux</span>
@@ -14468,7 +14495,7 @@ Selectionne les colonnes nécessaires</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Suppression des valeurs de population dupliquées en Chine</span>
@@ -14511,7 +14538,7 @@ Selectionne les colonnes nécessaires</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_dispo</span><span class="p">[</span><span class="s2">&quot;Dispo tot (Kcal/an)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_dispo</span><span class="p">[</span><span class="s1">&#39;Dispo alim (Kcal/pers/an)&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">df_dispo</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
@@ -14532,7 +14559,7 @@ Selectionne les colonnes nécessaires</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[68]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_dispo</span><span class="p">[</span><span class="s2">&quot;Dispo prot (Kg/an)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_dispo</span><span class="p">[</span><span class="s1">&#39;Dispo prot (mg/pers/an)&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">df_dispo</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000000</span><span class="p">)</span>
@@ -14551,7 +14578,7 @@ Selectionne les colonnes nécessaires</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[70]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO Question 4 : calculez pour chaque produit le ratio &quot;énergie/poids&quot; (kcal/kg) =&gt; Dispo tot (Kcal/an) / dispo alim (kg)</span>
@@ -14576,7 +14603,7 @@ Selectionne les colonnes nécessaires</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[71]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># copie les colonnes nécessaire et supprime les 0</span>
@@ -14629,7 +14656,7 @@ Huile d&#39;Olive                         8834.895349
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[74]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># selection les vegetaux</span>
@@ -14689,7 +14716,7 @@ besoin moyen protéines par personne par jour: 50g=0.05Kg</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[76]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbx humain possible avec dispo Kcal</span>
@@ -14726,7 +14753,7 @@ besoin moyen protéines par personne par jour: 50g=0.05Kg</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[77]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_humain</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tot_prot_vegetal</span><span class="o">/</span><span class="p">(</span><span class="mf">0.05</span><span class="o">*</span><span class="mi">365</span><span class="p">))</span>
@@ -14767,7 +14794,7 @@ besoin moyen protéines par personne par jour: 50g=0.05Kg</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[79]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># total dispo animaux+pertes (Kcal/an) = ( (perte + animal(Kg/an) ) * Energie (Kcal/kg/an)</span>
@@ -14818,7 +14845,7 @@ Q8/ total humain avec perte+animal (proteine): 5381232690 humains
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[80]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># total dispo int (Kcal/an) = Dispo int (Kg/an) * Energie (Kcal/kg/an)</span>
@@ -14868,7 +14895,7 @@ Q9/ total humain avec dispo mondiale: 25983311227
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[82]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">prop_ss_nut</span> <span class="o">=</span>  <span class="p">((</span><span class="n">df_sous_alim</span><span class="p">[</span><span class="s2">&quot;Valeur&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">/</span> <span class="n">nbx_humain</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -14909,7 +14936,7 @@ Q9/ total humain avec dispo mondiale: 25983311227
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[84]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># creation de la liste des cereales</span>
@@ -14957,7 +14984,7 @@ Q9/ total humain avec dispo mondiale: 25983311227
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[86]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># informations relatives aux pays dans lesquels la FAO recense des personnes en sous-nutrition.</span>
@@ -15030,7 +15057,7 @@ incohérence</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[87]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">top_3_animal</span> <span class="o">=</span> <span class="n">df_dispo_15</span><span class="p">[</span><span class="s2">&quot;ratio animal/animal_humain&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df_dispo_15</span><span class="p">[</span><span class="s2">&quot;Produit&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
@@ -15077,7 +15104,7 @@ Name: ratio animal/animal_humain, dtype: float64
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[89]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># : selection cereales + USA + aliment_animaux</span>
@@ -15122,7 +15149,7 @@ Name: ratio animal/animal_humain, dtype: float64
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[91]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_thai_export</span> <span class="o">=</span> <span class="n">df_vegetaux</span><span class="p">[(</span><span class="n">df_vegetaux</span><span class="p">[</span><span class="s2">&quot;Zone&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;Thaïlande&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_vegetaux</span><span class="p">[</span><span class="s2">&quot;Produit&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;Manioc&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_vegetaux</span><span class="p">[</span><span class="s2">&quot;Élément&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;Exportations - Quantité&quot;</span><span class="p">)]</span>
