@@ -14539,6 +14539,18 @@ Selectionne les colonnes nécessaires</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Question:-2-Identifiez-ces-redondances">Question: 2 Identifiez ces redondances<a class="anchor-link" href="#Question:-2-Identifiez-ces-redondances">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>prod – Δstock + import – export = dispo_int = 
+alim_animal + semence + traitement + autre + perte + dispo_al</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Question-3-:-Calculez-(pour-chaque-pays-et-chaque-produit)-la-disponibilit&#233;-alimentaire-en-kcal-=&gt;-(Kcal/pers/an)*Population">Question 3 : Calculez (pour chaque pays et chaque produit) la disponibilit&#233; alimentaire en kcal =&gt; (Kcal/pers/an)*Population<a class="anchor-link" href="#Question-3-:-Calculez-(pour-chaque-pays-et-chaque-produit)-la-disponibilit&#233;-alimentaire-en-kcal-=&gt;-(Kcal/pers/an)*Population">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15050,16 +15062,6 @@ Name: ratio autre/int, dtype: float64
 
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Note: artefact avec la norvege:
-Importations - Quantité: 18 /
-Exportations - Quantité: 9 /
-Autres utilisations (non alimentaire): 18
-incohérence</p>
-
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -15067,6 +15069,7 @@ incohérence</p>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">top_3_animal</span> <span class="o">=</span> <span class="n">df_dispo_15</span><span class="p">[</span><span class="s2">&quot;ratio animal/animal_humain&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df_dispo_15</span><span class="p">[</span><span class="s2">&quot;Produit&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;QUESTION 12&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Plus grande valeur ration animal/total&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">top_3_animal</span><span class="p">[</span><span class="s2">&quot;ratio animal/animal_humain&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
@@ -15088,7 +15091,8 @@ incohérence</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Plus grande valeur ration animal/total
+<pre>QUESTION 12
+Plus grande valeur ration animal/total
 Produit
 Manioc                 1.0
 Maïs                   1.0
